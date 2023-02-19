@@ -1,0 +1,65 @@
+<section>
+    <div class="container card-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-xl-4">
+                <div class="card">
+                    <div class="card-header d-flex">
+                        <h5>'Project Name' Chatbot</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <div *ngFor="let message of messageData">
+
+                            <ng-template [ngIf]="message.isChatbot" [ngIfElse]="botUser">
+                                <div class="d-flex justify-content-between">
+                                    <p class="chat-details">{{chatbotName}}</p>
+                                    <p class="chat-details">{{message.dateTime | date:"dd MMM yy HH:mm:ss"}}</p>
+                                </div>
+
+                                <div class="d-flex flex-row justify-content-start">
+                                    <img src="../../../assets/bot.jpg" [alt]="chatbotName"
+                                        style="width: 45px; height: 100%;">
+                                    <div>
+                                        <p class="bot-message">{{message.message}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="user-message-option">
+                                    <div *ngFor="let userMsg of message.options">
+                                        <button (click)="userOptionButtonClick(message,userMsg)" type="button"
+                                            class="btn btn-outline-primary">{{userMsg.message}}</button>
+                                    </div>
+                                </div>
+
+                            </ng-template>
+
+                            <ng-template #botUser>
+                                <div class="d-flex justify-content-between">
+                                    <p class="chat-details">{{message.dateTime| date:"dd MMM yy HH:mm:ss"}}</p>
+                                    <p class="chat-details">You</p>
+                                </div>
+                                <div class="d-flex flex-row justify-content-end">
+                                    <div>
+                                        <p class="user-message">{{message.message}}</p>
+                                    </div>
+                                    <img src="../../../assets/user.png" [alt]="chatbotName"
+                                        style="width: 45px; height: 100%;">
+                                </div>
+                            </ng-template>
+
+                        </div>
+                    </div>
+
+                    <div  class="card-footer d-flex justify-content-start align-items-center">
+                        <div class="input-control" *ngIf="showTextBox">
+                            <input name="emailId" type="text" class="form-control" placeholder="Enter email Id" [(ngModel)]="emailId"/>
+                            <button class="btn btn-outline-primary" type="button" (click)="emailClick()">
+                                <img src="../../../assets/sendIcon.png" style="height: 25px">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

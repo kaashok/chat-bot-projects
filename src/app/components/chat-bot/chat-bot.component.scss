@@ -1,0 +1,46 @@
+.card-container {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.card-body {
+    min-height: 600px;
+    overflow-y:auto;
+}
+
+.chat-details {
+    font-size: 0.875em;
+    margin-bottom: 0.25rem !important;
+}
+
+.bot-message {
+    margin-left: 1rem !important;
+    margin-bottom: 1rem !important;
+    border-radius: 0.5rem !important;
+    padding: 0.5rem !important;
+    background-color: gainsboro;
+}
+
+.user-message {
+    margin-right: 1rem !important;
+    margin-bottom: 1rem !important;
+    border-radius: 0.5rem !important;
+    padding: 0.5rem !important;
+    background-color: beige;
+}
+
+.card-footer{
+    padding: 1rem !important;
+}
+
+.user-message-option button{
+    font-size: 0.875em;
+    margin-bottom: 1rem !important;
+}
+
+.input-control {
+    position: relative;
+    display: flex;   
+    align-items: stretch;
+    width: 100%;
+}
